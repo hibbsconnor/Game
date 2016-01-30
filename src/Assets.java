@@ -5,7 +5,7 @@ public class Assets {
 
     private static final int DIM = 32;
 
-    public static BufferedImage background, asteroid;
+    public static BufferedImage background, asteroid, bullet;
     public static BufferedImage[] player;
 
     public static void init(){
@@ -20,6 +20,6 @@ public class Assets {
         //grass  = background.crop(0, 0, DIM);
         asteroid = ImageLoader.loadImage("sprites/asteroid.png");
         background = ImageLoader.loadImage("backgrounds/space_background.png");
-
+        bullet = ImageLoader.loadImage("sprites/bullet.png");
     }
 }
