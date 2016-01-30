@@ -14,12 +14,14 @@ public class Main extends Canvas implements Runnable {
     public static final int WIDTH = (int) 990;
     public static final int HEIGHT = (int) 990;
 
+    private long timeSinceAsteroid = 0, lastTime = System.currentTimeMillis();
+
     public final String TITLE = "Game Title Here";
 
     private boolean running = false;
     private Thread thread;
 
-    public static Random rand = new Random();
+    public Random rand = new Random();
 
     public KeyInput keyInput = new KeyInput();
 
@@ -35,11 +37,6 @@ public class Main extends Canvas implements Runnable {
 
         Assets.init();
         player = new Player(this, new Point(400,400), new Point(0,0));
-
-        for(int i=0;i<100; i++){
-            asteroids.add(new Asteroid(this, new Point(rand.nextInt(WIDTH), rand.nextInt(HEIGHT/4)), new Point(0,rand.nextInt(10)+1)));
-        }
-
 
         //Must be at end
         if(running) return;
@@ -95,6 +92,7 @@ public class Main extends Canvas implements Runnable {
     private void tick(){
         keyInput.tick();
         player.tick();
+        generateAsteroids();
         for(Asteroid a : asteroids){
             a.tick();
         }
@@ -144,5 +142,13 @@ public class Main extends Canvas implements Runnable {
      */
     public KeyInput getKeyInput() {
         return keyInput;
+    }
+
+    public void generateAsteroids(){
+        timeSinceAsteroid += (System.currentTimeMillis() - lastTime);
+        if(timeSinceAsteroid > 500){ //add a new asteroid every 500 milliseconds
+            asteroids.add(new Asteroid(this, new Point(rand.nextInt(WIDTH), rand.nextInt(HEIGHT/4)), new Point(0,rand.nextInt(10)+1)));
+        }
+        lastTime = System.currentTimeMillis();
     }
 }
