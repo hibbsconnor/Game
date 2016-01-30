@@ -41,7 +41,7 @@ public class Main extends Canvas implements Runnable {
 
 
         Assets.init();
-        player = new Player(this, new Point(WIDTH/2,WIDTH/2), new Point(0,0));
+        player = new Player(this, new Point((WIDTH/2)+16,(HEIGHT/2)+16), new Point(0,0));
 
         //Must be at end
         if(running) return;
