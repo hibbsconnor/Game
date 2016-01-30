@@ -85,7 +85,7 @@ public class Main extends Canvas implements Runnable {
 
             if(System.currentTimeMillis() - timer > 1000){
                 timer += 1000;
-                System.out.println(updates + " Ticks, Fps " + frames);
+                //System.out.println(updates + " Ticks, Fps " + frames);
                 updates = 0;
                 frames = 0;
 
@@ -158,49 +158,41 @@ public class Main extends Canvas implements Runnable {
         return keyInput;
     }
 
-    //TODO delete this comment. Thanks :)
     public void generateAsteroids(){
         timeSinceAsteroid += (System.currentTimeMillis() - lastTime);
         if(timeSinceAsteroid > 500){ //add a new asteroid every 500 milliseconds
             int xPos = rand.nextInt(WIDTH);
             int yPos = rand.nextInt(HEIGHT);
             Point location = new Point();
-            Point velocity = new Point();
-            int speed = rand.nextInt(5) + 5;
+            float xVelocity, yVelocity;
+            float speed = (rand.nextFloat() * 5) + 5;
 
-            switch(rand.nextInt(4)){
+            switch(rand.nextInt(4)){ //randomly generate a side to spawn on. 0-4: top, right, left, bottom
                 case 0:
                     location.x = xPos;
-                    location.y = -64;//-64
+                    location.y = 64;//-64
                     break;
                 case 1:
-                    location.x = WIDTH + 64; // +64
+                    location.x = WIDTH - 64; // +64
                     location.y = yPos;
                     break;
                 case 2:
                     location.x = xPos;
-                    location.y = HEIGHT + 64; //+64
+                    location.y = HEIGHT - 64; //+64
                     break;
                 case 3:
-                    location.x = -64; //-64
+                    location.x = +64; //-64
                     location.y = yPos;
                     break;
             }
             int w = location.x - player.position.x;
             int h = location.y - player.position.y;
-            double theta = java.lang.Math.asin(w / h);
+            double theta = java.lang.Math.atan2(w, h);
 
+            xVelocity = -(float)(speed * Math.sin(theta));
+            yVelocity = -(float)(speed * Math.cos(theta));
 
-            velocity.x = (int)(speed * Math.sin(theta));
-            velocity.y = (int)(speed * Math.cos(theta));
-            if(player.position.x < location.x){ //player is to the left
-                velocity.x = -velocity.x;
-            }
-            if(player.position.y < location.y){ //player is above
-                velocity.y = -velocity.y;
-            }
-
-            asteroids.add(new Asteroid(this, location, velocity));
+            asteroids.add(new Asteroid(this, location, xVelocity, yVelocity));
             timeSinceAsteroid = 0;
         }
         lastTime = System.currentTimeMillis();
