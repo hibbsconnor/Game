@@ -102,7 +102,9 @@ public class Main extends Canvas implements Runnable {
          * DRAW STUFF UNDER HERE
          * Like "g2d.(BufferedImage object, int x, int y, this)"
          */
+        g2d.drawImage(Assets.background,0,0,null);
         player.render(g2d);
+
 
         g2d.dispose();
         bs.show();
