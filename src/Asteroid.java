@@ -32,7 +32,12 @@ public class Asteroid extends Entity{
             if (Collisions.rectCollision(new Rectangle(b.position.x, b.position.y, 4, 8),
                     new Rectangle(position.x, position.y, 64, 64))) {
                 Main.deadAsteroids.add(this);
+                Main.player.deadBullets.add(b);
             }
+        }
+
+        for(Bullet b : Main.player.deadBullets){
+            Main.player.bullets.remove(b);
         }
     }
 
