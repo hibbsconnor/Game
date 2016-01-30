@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="05fa9431-509d-46d8-b2c5-52b9ffd5e355" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bullet.java" afterPath="$PROJECT_DIR$/src/Bullet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KeyInput.java" afterPath="$PROJECT_DIR$/src/KeyInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Player.java" afterPath="$PROJECT_DIR$/src/Player.java" />
     </list>
     <ignored path="Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -733,7 +730,13 @@
       <option name="project" value="LOCAL" />
       <updated>1454180434652</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Bullet movement">
+      <created>1454180992968</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1454180992968</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -806,7 +809,8 @@
     <MESSAGE value="Initialized window with player" />
     <MESSAGE value="Bacground refreshes, player moves" />
     <MESSAGE value="Added Bullet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Bullet" />
+    <MESSAGE value="Bullet movement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bullet movement" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
