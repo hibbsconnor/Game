@@ -23,7 +23,7 @@ public class Asteroid extends Entity{
     public void tick(){
         position.x += velocity.x;
         position.y += velocity.y;
-
+        //OKAY
         if(Collisions.rectCollision(new Rectangle(Main.player.position.x, Main.player.position.y, 32, 32),
                                     new Rectangle(position.x, position.y, 64, 64))){
             JOptionPane.showMessageDialog(null, "You are lose!");
