@@ -1,12 +1,14 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 public class Player extends Entity {
 
     private Animation anim;
 
     private int speed = 5;
+    private ArrayList<Bullet> bullets = new ArrayList<>();
 
     public Player(Main game, Point position, Point velocity){
         super(game, position, velocity);
@@ -31,11 +33,22 @@ public class Player extends Entity {
            velocity.x = speed;
         }
 
+        if(game.getKeyInput().space){
+            bullets.add(new Bullet(position));
+        }
+
     }
 
     @Override
     public void tick(){
         anim.tick();
+
+        for(Bullet b : bullets){
+            b.tick();
+            if(b.position.y < 50){
+                bullets.remove(b);
+            }
+        }
 
         getInput();
         move();
@@ -43,6 +56,10 @@ public class Player extends Entity {
 
     @Override
     public void render(Graphics g){
+
+        for(Bullet b : bullets){
+            b.render(g);
+        }
         g.drawImage(getCurrentAnimationFrame(), position.x, position.y, 32, 32, null);
     }
 
