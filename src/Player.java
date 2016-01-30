@@ -49,7 +49,7 @@ public class Player extends Entity {
     @Override
     public void tick(){
         anim.tick();
-
+        //Cool
         timeSinceLastFire += (System.currentTimeMillis() - lastTime);
         if(timeSinceLastFire > 150){
             canFire = true;
