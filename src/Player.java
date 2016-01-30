@@ -9,10 +9,6 @@ public class Player extends Entity {
     public Player(Main game, Point position, Point velocity){
         super(game, position, velocity);
         anim = new Animation(4, Assets.player);
-        bounds.x = 2; //create collision bounds with 2 pixel inset
-        bounds.y = 2;
-        bounds.width = 28;
-        bounds.height = 28;
     }
 
     private void getInput(){

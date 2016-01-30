@@ -18,19 +18,25 @@ public class Main extends Canvas implements Runnable {
     private Thread thread;
 
     public KeyInput keyInput = new KeyInput();
+
     public Player player;
 
     private synchronized void start() {
         addKeyListener(keyInput);
         addMouseListener(new MouseInput());
         this.requestFocus();
+
+
+        Assets.init();
+        player = new Player(this, new Point(400,400), new Point(0,0));
+
+
+
+        //Must be at end
         if(running) return;
         running = true;
         thread = new Thread(this);
         thread.start();
-
-        player = new Player(this, new Point(400,400), new Point(0,0));
-        //OKAY
     }
 
     private synchronized void stop(){
