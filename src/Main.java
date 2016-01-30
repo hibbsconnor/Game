@@ -16,6 +16,8 @@ public class Main extends Canvas implements Runnable {
     public static final int HEIGHT = (int) 990;
 
     private long timeSinceAsteroid = 0, lastTime = System.currentTimeMillis();
+
+    //Display Score
     public static int score = 0;
     public final String title = "Score: " + score;
 
