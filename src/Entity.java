@@ -8,8 +8,10 @@ public abstract class Entity {
     private Point position;
     private Point velocity;
 
-    public Entity(BufferedImage sprite){
+    public Entity(BufferedImage sprite, Point position, Point velocity){
         this.sprite = sprite;
+        this.position = position;
+        this.velocity =  velocity;
     }
 
     public Point getPosition() {
