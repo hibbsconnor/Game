@@ -30,6 +30,7 @@ public class Main extends Canvas implements Runnable {
         thread.start();
 
         player = new Player(this, new Point(400,400), new Point(0,0));
+        //OKAY
     }
 
     private synchronized void stop(){
