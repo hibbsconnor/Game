@@ -10,7 +10,8 @@ public class Player extends Entity {
 
     private int speed = 5;
     public ArrayList<Bullet> bullets = new ArrayList<>();
-    private ArrayList<Bullet> deadBullets = new ArrayList<>();
+    public ArrayList<Bullet> deadBullets = new ArrayList<>();
+
     private long timeSinceLastFire = 0, lastTime = System.currentTimeMillis();
     private boolean canFire = true;
 
@@ -78,8 +79,12 @@ public class Player extends Entity {
     }
 
     public void move(){
-        position.x += velocity.x;
-        position.y += velocity.y;
+        if(position.x+velocity.x >0 && position.x+velocity.x < 990){
+            position.x += velocity.x;
+        }
+        if(position.y+velocity.y>0 && position.y+velocity.y<990){
+            position.y += velocity.y;
+        }
     }
 
     private BufferedImage getCurrentAnimationFrame(){

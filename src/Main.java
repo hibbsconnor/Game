@@ -1,6 +1,7 @@
 import java.awt.Canvas;
 import java.awt.Graphics2D;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.image.BufferStrategy;
 import java.util.ArrayList;
@@ -38,7 +39,7 @@ public class Main extends Canvas implements Runnable {
 
 
         Assets.init();
-        player = new Player(this, new Point(400,400), new Point(0,0));
+        player = new Player(this, new Point(WIDTH/2,HEIGHT-50), new Point(0,0));
 
         //Must be at end
         if(running) return;
@@ -98,7 +99,8 @@ public class Main extends Canvas implements Runnable {
         deadAsteroids = new ArrayList<>();
         for(Asteroid a : asteroids){
             a.tick();
-            if(a.position.y>HEIGHT/2){
+            if(!Collisions.rectCollision(new Rectangle(-200,-200,1390,1390),
+                                        new Rectangle(a.position.x, a.position.y, 64, 64))){
                 deadAsteroids.add(a);
             }
         }
