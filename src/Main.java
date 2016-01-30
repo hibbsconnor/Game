@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 public class Main extends Canvas implements Runnable {
-
+//i <3 git
     public static final int WIDTH = (int) 990;
     public static final int HEIGHT = (int) 990;
 
