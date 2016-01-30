@@ -45,6 +45,9 @@ public class Player extends Entity {
 
         for(Bullet b : bullets){
             b.tick();
+            if(b.position.y < 50){
+                bullets.remove(b);
+            }
         }
 
         getInput();
