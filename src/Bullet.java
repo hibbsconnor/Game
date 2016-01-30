@@ -4,7 +4,7 @@ import java.awt.image.BufferedImage;
 public class Bullet {
 
     private BufferedImage image;
-    private Point velocity = new Point(0, -5);
+    private Point velocity = new Point(0, -15);
     public Point position = new Point();
 
     //public static int ID = Main.rand.nextInt(10000);

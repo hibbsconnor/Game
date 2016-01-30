@@ -26,13 +26,15 @@ public class Asteroid extends Entity{
         //OKAY
         if(Collisions.rectCollision(new Rectangle(Main.player.position.x, Main.player.position.y, 32, 32),
                                     new Rectangle(position.x, position.y, 64, 64))){
-            JOptionPane.showMessageDialog(null, "You are lose!");
+            JOptionPane.showMessageDialog(null, "You are lose! Your score is: " + Main.score);
+            System.exit(1);
         }
         for(Bullet b : Main.player.bullets) {
             if (Collisions.rectCollision(new Rectangle(b.position.x, b.position.y, 4, 8),
                     new Rectangle(position.x, position.y, 64, 64))) {
                 Main.deadAsteroids.add(this);
                 Main.player.deadBullets.add(b);
+                Main.score ++;
             }
         }
 

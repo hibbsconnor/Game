@@ -11,13 +11,13 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 public class Main extends Canvas implements Runnable {
-
+    public static JFrame frame;
     public static final int WIDTH = (int) 990;
     public static final int HEIGHT = (int) 990;
 
     private long timeSinceAsteroid = 0, lastTime = System.currentTimeMillis();
-
-    public final String TITLE = "Game Title Here";
+    public static int score = 0;
+    public  String title = "Score: " + score;
 
     private boolean running = false;
     private Thread thread;
@@ -39,7 +39,7 @@ public class Main extends Canvas implements Runnable {
 
 
         Assets.init();
-        player = new Player(this, new Point(WIDTH/2,HEIGHT-50), new Point(0,0));
+        player = new Player(this, new Point(WIDTH/2,WIDTH/2), new Point(0,0));
 
         //Must be at end
         if(running) return;
@@ -107,6 +107,7 @@ public class Main extends Canvas implements Runnable {
         for(Asteroid a : deadAsteroids){
             asteroids.remove(a);
         }
+        frame.setTitle("Score: " + score);
     }
 
     private void render(){
@@ -136,7 +137,7 @@ public class Main extends Canvas implements Runnable {
     public static void main(String args[]){
         Main game = new Main();
         game.setSize(WIDTH, HEIGHT);
-        JFrame frame = new JFrame(game.TITLE);
+        frame = new JFrame(game.title);
         frame.add(game);
         frame.setResizable(false);
         frame.pack();
