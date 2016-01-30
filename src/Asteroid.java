@@ -2,6 +2,8 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.JOptionPane;
 
@@ -22,6 +24,16 @@ public class Asteroid extends Entity{
         position.x += velocity.x;
         position.y += velocity.y;
 
+        if(Collisions.rectCollision(new Rectangle(Main.player.position.x, Main.player.position.y, 32, 32),
+                                    new Rectangle(position.x, position.y, 64, 64))){
+            JOptionPane.showMessageDialog(null, "You are lose!");
+        }
+        for(Bullet b : Main.player.bullets) {
+            if (Collisions.rectCollision(new Rectangle(b.position.x, b.position.y, 4, 8),
+                    new Rectangle(position.x, position.y, 64, 64))) {
+                Main.deadAsteroids.add(this);
+            }
+        }
     }
 
     public void render(Graphics g){

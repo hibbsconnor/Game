@@ -27,7 +27,9 @@ public class Main extends Canvas implements Runnable {
 
     public static Player player;
 
-    public ArrayList<Asteroid> asteroids = new ArrayList<>();
+    public static ArrayList<Asteroid> asteroids = new ArrayList<>();
+
+    public static ArrayList<Asteroid> deadAsteroids = new ArrayList<>();
 
     private synchronized void start() {
         addKeyListener(keyInput);
@@ -93,8 +95,15 @@ public class Main extends Canvas implements Runnable {
         keyInput.tick();
         player.tick();
         generateAsteroids();
+        deadAsteroids = new ArrayList<>();
         for(Asteroid a : asteroids){
             a.tick();
+            if(a.position.y>HEIGHT/2){
+                deadAsteroids.add(a);
+            }
+        }
+        for(Asteroid a : deadAsteroids){
+            asteroids.remove(a);
         }
     }
 

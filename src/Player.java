@@ -9,7 +9,7 @@ public class Player extends Entity {
     private Animation anim;
 
     private int speed = 5;
-    private ArrayList<Bullet> bullets = new ArrayList<>();
+    public ArrayList<Bullet> bullets = new ArrayList<>();
     private ArrayList<Bullet> deadBullets = new ArrayList<>();
     private long timeSinceLastFire = 0, lastTime = System.currentTimeMillis();
     private boolean canFire = true;
