@@ -8,6 +8,11 @@ public class Player extends Entity {
 
     public Player(Main game, Point position, Point velocity){
         super(game, position, velocity);
+        anim = new Animation(4, Assets.player);
+        bounds.x = 2; //create collision bounds with 2 pixel inset
+        bounds.y = 2;
+        bounds.width = 28;
+        bounds.height = 28;
     }
 
     private void getInput(){
@@ -39,8 +44,6 @@ public class Player extends Entity {
 
     @Override
     public void render(Graphics g){
-//        int xPos = (int)(x - handler.getGameCamera().getxOffset());
-//        int yPos = (int)(y - handler.getGameCamera().getyOffset());
         g.drawImage(getCurrentAnimationFrame(), position.x, position.y, 32, 32, null);
     }
 
@@ -50,17 +53,6 @@ public class Player extends Entity {
 
     private BufferedImage getCurrentAnimationFrame(){
         BufferedImage currentFrame;
-//        if(xMove < 0){
-//            currentFrame = animLeft.getCurrentFrame();
-//        } else if(xMove > 0){
-//            currentFrame = animRight.getCurrentFrame();
-//        } else if(yMove < 0){
-//            currentFrame = animUp.getCurrentFrame();
-//        } else if(yMove > 0){
-//            currentFrame = animDown.getCurrentFrame();
-//        } else {
-//            currentFrame = player_still;
-//        }
         currentFrame = anim.getCurrentFrame();
         return currentFrame;
     }
