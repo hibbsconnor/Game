@@ -11,7 +11,7 @@ public class Animation {
         this.frames = frames;
         index = 0;
         lastTime = System.currentTimeMillis();
-        timer = 0;
+        timer = 0;//
     }
 
     public void tick(){
