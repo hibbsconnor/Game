@@ -11,13 +11,13 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 public class Main extends Canvas implements Runnable {
-
+    public static JFrame frame;
     public static final int WIDTH = (int) 990;
     public static final int HEIGHT = (int) 990;
 
     private long timeSinceAsteroid = 0, lastTime = System.currentTimeMillis();
-
-    public final String TITLE = "Game Title Here";
+    public static int score = 0;
+    public final String title = "Score: " + score;
 
     private boolean running = false;
     private Thread thread;
