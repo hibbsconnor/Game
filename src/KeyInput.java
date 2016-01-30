@@ -7,7 +7,7 @@ public class KeyInput extends KeyAdapter{
     }
 
     public void keyPressed(KeyEvent e){
-System.out.print("fuck github");
+        System.out.print("fuck github");
     }
 
     public void keyReleased(KeyEvent e){
