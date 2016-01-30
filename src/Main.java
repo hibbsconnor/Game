@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 /**
- * Created by hibbscm on 1/30/2016.
+ * Created by hibbscm
  */
 public class Main extends Canvas implements Runnable {
 
