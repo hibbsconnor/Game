@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="05fa9431-509d-46d8-b2c5-52b9ffd5e355" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
     </list>
     <ignored path="Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -825,7 +824,7 @@
       <created>1454168972404</created>
       <option name="number" value="Default" />
       <updated>1454168972404</updated>
-      <workItem from="1454187357324" duration="2838000" />
+      <workItem from="1454187357324" duration="2847000" />
     </task>
     <task id="LOCAL-00001" summary="Main class created">
       <created>1454169430109</created>
@@ -971,11 +970,17 @@
       <option name="project" value="LOCAL" />
       <updated>1454190220501</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Fixed player height again">
+      <created>1454190307265</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1454190307265</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2838000" />
+    <option name="totallyTimeSpent" value="2847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1055,7 +1060,8 @@
     <MESSAGE value="imported rectangle" />
     <MESSAGE value="altered player center and bullet speed" />
     <MESSAGE value="Fixed player height" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed player height" />
+    <MESSAGE value="Fixed player height again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed player height again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
