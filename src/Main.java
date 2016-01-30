@@ -5,9 +5,6 @@ import java.awt.image.BufferStrategy;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
-/**
- * Created by hibbscm
- */
 public class Main extends Canvas implements Runnable {
 
     public static final int WIDTH = (int) 800;
