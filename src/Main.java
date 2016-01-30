@@ -10,8 +10,8 @@ import javax.swing.WindowConstants;
  */
 public class Main extends Canvas implements Runnable {
 
-    public static final int WIDTH = (int) 800;
-    public static final int HEIGHT = (int) 600;
+    public static final int WIDTH = (int) 990;
+    public static final int HEIGHT = (int) 990;
 
     public final String TITLE = "Game Title Here";
 
