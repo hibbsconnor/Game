@@ -1,34 +1,36 @@
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
 public class Player extends Entity {
 
     private Animation anim;
 
-    public Player(Point position, Point velocity){
-        super(position, velocity);
-        bounds.x = 2; //create collision bounds with 2 pixel inset
-        bounds.y = 2;
-        bounds.width = 28;
-        bounds.height = 28;
+    private int speed = 5;
+
+    public Player(Main game, Point position, Point velocity){
+        super(game, position, velocity);
+        anim = new Animation(100, Assets.player);
     }
 
     private void getInput(){
-//        xMove = 0;
-//        yMove = 0;
-//
-//        if(handler.getKeyManager().up || handler.getKeyManager().w){
-//            yMove = -speed;
-//        }
-//        if(handler.getKeyManager().down || handler.getKeyManager().s){
-//            yMove = speed;
-//        }
-//        if(handler.getKeyManager().left || handler.getKeyManager().a){
-//            xMove = -speed;
-//        }
-//        if(handler.getKeyManager().right || handler.getKeyManager().d){
-//            xMove = speed;
-//        }
+        velocity.y = 0;
+        velocity.x = 0;
+
+
+        if(game.getKeyInput().up || game.getKeyInput().w){
+            velocity.y = -speed;
+        }
+        if(game.getKeyInput().down || game.getKeyInput().s){
+           velocity.y = speed;
+        }
+        if(game.getKeyInput().left || game.getKeyInput().a){
+           velocity.x = -speed;
+        }
+        if(game.getKeyInput().right || game.getKeyInput().d){
+           velocity.x = speed;
+        }
+
     }
 
     @Override
@@ -41,28 +43,16 @@ public class Player extends Entity {
 
     @Override
     public void render(Graphics g){
-//        int xPos = (int)(x - handler.getGameCamera().getxOffset());
-//        int yPos = (int)(y - handler.getGameCamera().getyOffset());
         g.drawImage(getCurrentAnimationFrame(), position.x, position.y, 32, 32, null);
     }
 
     public void move(){
-
+        position.x += velocity.x;
+        position.y += velocity.y;
     }
 
     private BufferedImage getCurrentAnimationFrame(){
         BufferedImage currentFrame;
-//        if(xMove < 0){
-//            currentFrame = animLeft.getCurrentFrame();
-//        } else if(xMove > 0){
-//            currentFrame = animRight.getCurrentFrame();
-//        } else if(yMove < 0){
-//            currentFrame = animUp.getCurrentFrame();
-//        } else if(yMove > 0){
-//            currentFrame = animDown.getCurrentFrame();
-//        } else {
-//            currentFrame = player_still;
-//        }
         currentFrame = anim.getCurrentFrame();
         return currentFrame;
     }

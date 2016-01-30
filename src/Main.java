@@ -1,24 +1,47 @@
 import java.awt.Canvas;
 import java.awt.Graphics2D;
+import java.awt.Point;
+import java.awt.RenderingHints;
 import java.awt.image.BufferStrategy;
+import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 
 public class Main extends Canvas implements Runnable {
 
-    public static final int WIDTH = (int) 800;
-    public static final int HEIGHT = (int) 600;
+    public static final int WIDTH = (int) 990;
+    public static final int HEIGHT = (int) 990;
 
     public final String TITLE = "Game Title Here";
 
     private boolean running = false;
     private Thread thread;
 
+    public Random rand = new Random();
+
+    public KeyInput keyInput = new KeyInput();
+
+    public Player player;
+
+    public ArrayList<Asteroid> asteroids = new ArrayList<>();
+
     private synchronized void start() {
-        addKeyListener(new KeyInput());
+        addKeyListener(keyInput);
         addMouseListener(new MouseInput());
         this.requestFocus();
+
+
+        Assets.init();
+        player = new Player(this, new Point(400,400), new Point(0,0));
+
+        for(int i=0;i<2; i++){
+            asteroids.add(new Asteroid(this, new Point(rand.nextInt(WIDTH), rand.nextInt(HEIGHT/4)), new Point(0,2)));
+        }
+
+
+        //Must be at end
         if(running) return;
         running = true;
         thread = new Thread(this);
@@ -70,7 +93,11 @@ public class Main extends Canvas implements Runnable {
     }
 
     private void tick(){
-
+        keyInput.tick();
+        player.tick();
+        for(Asteroid a : asteroids){
+            a.tick();
+        }
     }
 
     private void render(){
@@ -87,6 +114,11 @@ public class Main extends Canvas implements Runnable {
          * DRAW STUFF UNDER HERE
          * Like "g2d.(BufferedImage object, int x, int y, this)"
          */
+        g2d.drawImage(Assets.background,0,0,null);
+        player.render(g2d);
+        for(Asteroid a: asteroids){
+            a.render(g2d);
+        }
 
         g2d.dispose();
         bs.show();
@@ -104,5 +136,13 @@ public class Main extends Canvas implements Runnable {
 
         frame.setVisible(true);
         game.start();
+    }
+
+    /**
+     * Gets the object responsibe for tracking key input
+     * @return The Key Input tracker for the game
+     */
+    public KeyInput getKeyInput() {
+        return keyInput;
     }
 }
