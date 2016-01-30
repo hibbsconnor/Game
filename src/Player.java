@@ -51,7 +51,7 @@ public class Player extends Entity {
         anim.tick();
 
         timeSinceLastFire += (System.currentTimeMillis() - lastTime);
-        if(timeSinceLastFire > 250){
+        if(timeSinceLastFire > 200){
             canFire = true;
         }
         lastTime = System.currentTimeMillis();
