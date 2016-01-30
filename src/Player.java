@@ -10,7 +10,7 @@ public class Player extends Entity {
 
     public Player(Main game, Point position, Point velocity){
         super(game, position, velocity);
-        anim = new Animation(4, Assets.player);
+        anim = new Animation(100, Assets.player);
     }
 
     private void getInput(){

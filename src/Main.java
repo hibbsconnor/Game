@@ -3,6 +3,8 @@ import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.RenderingHints;
 import java.awt.image.BufferStrategy;
+import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
@@ -17,9 +19,13 @@ public class Main extends Canvas implements Runnable {
     private boolean running = false;
     private Thread thread;
 
+    public Random rand = new Random();
+
     public KeyInput keyInput = new KeyInput();
 
     public Player player;
+
+    public ArrayList<Asteroid> asteroids = new ArrayList<>();
 
     private synchronized void start() {
         addKeyListener(keyInput);
@@ -30,6 +36,9 @@ public class Main extends Canvas implements Runnable {
         Assets.init();
         player = new Player(this, new Point(400,400), new Point(0,0));
 
+        for(int i=0;i<2; i++){
+            asteroids.add(new Asteroid(this, new Point(rand.nextInt(WIDTH), rand.nextInt(HEIGHT/4)), new Point(0,2)));
+        }
 
 
         //Must be at end
@@ -86,6 +95,9 @@ public class Main extends Canvas implements Runnable {
     private void tick(){
         keyInput.tick();
         player.tick();
+        for(Asteroid a : asteroids){
+            a.tick();
+        }
     }
 
     private void render(){
@@ -104,7 +116,9 @@ public class Main extends Canvas implements Runnable {
          */
         g2d.drawImage(Assets.background,0,0,null);
         player.render(g2d);
-
+        for(Asteroid a: asteroids){
+            a.render(g2d);
+        }
 
         g2d.dispose();
         bs.show();
