@@ -14,15 +14,14 @@ public class Asteroid extends Entity{
 
     private BufferedImage image = Assets.asteroid;
 
-    //public static int ID = Main.rand.nextInt(10000);
-    public Asteroid(Main game, Point position, Point velocity){
-        super(game, position, velocity);
-
+    public Asteroid(Main game, Point position, float xVelocity, float yVelocity){
+        super(game, position.x, position.y, xVelocity, yVelocity);
     }
 
     public void tick(){
-        position.x += velocity.x;
-        position.y += velocity.y;
+        position.x += xVelocity;
+        position.y += yVelocity;
+        //System.out.println("X: " + xVelocity + " - Y: " + yVelocity);
         //OKAY
         if(Collisions.rectCollision(new Rectangle(Main.player.position.x, Main.player.position.y, 32, 32),
                                     new Rectangle(position.x, position.y, 64, 64))){

@@ -16,26 +16,26 @@ public class Player extends Entity {
     private boolean canFire = true;
 
     public Player(Main game, Point position, Point velocity){
-        super(game, position, velocity);
+        super(game, position.x, position.y, velocity.x, velocity.y);
         anim = new Animation(100, Assets.player);
     }
 
     private void getInput(){
-        velocity.y = 0;
-        velocity.x = 0;
+        yVelocity = 0;
+        xVelocity = 0;
 
 
         if(game.getKeyInput().up || game.getKeyInput().w){
-            velocity.y = -speed;
+            yVelocity = -speed;
         }
         if(game.getKeyInput().down || game.getKeyInput().s){
-           velocity.y = speed;
+           yVelocity = speed;
         }
         if(game.getKeyInput().left || game.getKeyInput().a){
-           velocity.x = -speed;
+           xVelocity = -speed;
         }
         if(game.getKeyInput().right || game.getKeyInput().d){
-           velocity.x = speed;
+           xVelocity = speed;
         }
 
         if(game.getKeyInput().space && canFire){
@@ -79,11 +79,11 @@ public class Player extends Entity {
     }
 
     public void move(){
-        if(position.x+velocity.x >0 && position.x+velocity.x < 990){
-            position.x += velocity.x;
+        if(position.x+xVelocity >0 && position.x+xVelocity < 990){
+            position.x += xVelocity;
         }
-        if(position.y+velocity.y>0 && position.y+velocity.y<990){
-            position.y += velocity.y;
+        if(position.y+yVelocity>0 && position.y+yVelocity<990){
+            position.y += yVelocity;
         }
     }
 
