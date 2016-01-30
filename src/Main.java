@@ -1,8 +1,4 @@
-import java.awt.Canvas;
-import java.awt.Graphics2D;
-import java.awt.Point;
-import java.awt.Rectangle;
-import java.awt.RenderingHints;
+import java.awt.*;
 import java.awt.image.BufferStrategy;
 import java.util.ArrayList;
 import java.util.Random;
@@ -39,7 +35,7 @@ public class Main extends Canvas implements Runnable {
 
 
         Assets.init();
-        player = new Player(this, new Point(WIDTH/2,HEIGHT-50), new Point(0,0));
+        player = new Player(this, new Point((WIDTH-16)/2,(HEIGHT-16)/2), new Point(0,0));
 
         //Must be at end
         if(running) return;
