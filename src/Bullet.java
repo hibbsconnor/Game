@@ -4,11 +4,12 @@ import java.awt.image.BufferedImage;
 public class Bullet {
 
     private BufferedImage image;
-    private Point velocity = new Point(0, 15);
-    private Point position;
+    private Point velocity = new Point(0, -5);
+    public Point position = new Point();
 
     public Bullet(Point position){
-        this.position = position;
+        this.position.x = position.x;
+        this.position.y = position.y;
         image = Assets.bullet;
     }
 
