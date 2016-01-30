@@ -6,6 +6,7 @@ public class KeyInput extends KeyAdapter{
     private boolean[] keys;
     public boolean up, down, left, right;
     public boolean w, a, s, d;
+    public boolean space;
 
     public KeyInput(){
         keys = new boolean[256];
@@ -21,6 +22,8 @@ public class KeyInput extends KeyAdapter{
         a = keys[KeyEvent.VK_A];
         s = keys[KeyEvent.VK_S];
         d = keys[KeyEvent.VK_D];
+
+        space = keys[KeyEvent.VK_SPACE];
     }
 
     @Override
