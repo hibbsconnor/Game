@@ -114,4 +114,12 @@ public class Main extends Canvas implements Runnable {
         frame.setVisible(true);
         game.start();
     }
+
+    /**
+     * Gets the object responsibe for tracking key input
+     * @return The Key Input tracker for the game
+     */
+    public KeyInput getKeyInput() {
+        return keyInput;
+    }
 }
