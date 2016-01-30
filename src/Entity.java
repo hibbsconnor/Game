@@ -6,9 +6,11 @@ public abstract class Entity {
     protected boolean isSolid = true; //entity solid by default
     protected Point position;
     protected Point velocity;
-    protected Rectangle bounds; //collision bounds
+    protected Rectangle bounds;
+    protected Main game;//collision bounds
 
-    public Entity(Point position, Point velocity){
+    public Entity(Main game, Point position, Point velocity){
+        this.game = game;
         this.position = position;
         this.velocity =  velocity;
     }
@@ -20,13 +22,9 @@ public abstract class Entity {
         this.velocity.y = (int)yVelocity;
     }
 
-    public void tick(){
+    public abstract void tick();
 
-    }
-
-    public void render(Graphics g){
-
-    }
+    public abstract void render(Graphics g);
 
     public Point getPosition() {
         return position;

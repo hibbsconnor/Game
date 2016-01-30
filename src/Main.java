@@ -1,5 +1,6 @@
 import java.awt.Canvas;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
@@ -15,8 +16,10 @@ public class Main extends Canvas implements Runnable {
     private boolean running = false;
     private Thread thread;
 
+    public KeyInput keyInput = new KeyInput();
+
     private synchronized void start() {
-        addKeyListener(new KeyInput());
+        addKeyListener(keyInput);
         addMouseListener(new MouseInput());
         this.requestFocus();
         if(running) return;
@@ -70,7 +73,7 @@ public class Main extends Canvas implements Runnable {
     }
 
     private void tick(){
-
+        keyInput.tick();
     }
 
     private void render(){
