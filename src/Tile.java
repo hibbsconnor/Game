@@ -1,6 +1,10 @@
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/**
+ * Class to hold background tiles. Has basic collision ability with
+ * isSolid() method. Override in extended tile to allow collision testing
+ */
 public class Tile {
 
     /*TO ADD NEW TILE
