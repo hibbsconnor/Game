@@ -13,7 +13,7 @@ public class Bullet {
     }
 
     public void render(Graphics g){
-
+        g.drawImage(image, position.x, position.y, null);
     }
 
     public void tick(){
