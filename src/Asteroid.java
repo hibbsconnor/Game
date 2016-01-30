@@ -1,6 +1,9 @@
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+
+import javax.swing.JOptionPane;
 
 /**
  * Created by mahonbd
@@ -16,6 +19,7 @@ public class Asteroid extends Entity{
     public void tick(){
         position.x += velocity.x;
         position.y += velocity.y;
+
     }
 
     public void render(Graphics g){

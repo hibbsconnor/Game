@@ -23,7 +23,7 @@ public class Main extends Canvas implements Runnable {
 
     public KeyInput keyInput = new KeyInput();
 
-    public Player player;
+    public static Player player;
 
     public ArrayList<Asteroid> asteroids = new ArrayList<>();
 
@@ -36,8 +36,8 @@ public class Main extends Canvas implements Runnable {
         Assets.init();
         player = new Player(this, new Point(400,400), new Point(0,0));
 
-        for(int i=0;i<2; i++){
-            asteroids.add(new Asteroid(this, new Point(rand.nextInt(WIDTH), rand.nextInt(HEIGHT/4)), new Point(0,2)));
+        for(int i=0;i<20; i++){
+            asteroids.add(new Asteroid(this, new Point(rand.nextInt(WIDTH), rand.nextInt(HEIGHT/4)), new Point(0,rand.nextInt(10)+1)));
         }
 
 
@@ -115,10 +115,10 @@ public class Main extends Canvas implements Runnable {
          * Like "g2d.(BufferedImage object, int x, int y, this)"
          */
         g2d.drawImage(Assets.background,0,0,null);
-        player.render(g2d);
         for(Asteroid a: asteroids){
             a.render(g2d);
         }
+        player.render(g2d);
 
         g2d.dispose();
         bs.show();
