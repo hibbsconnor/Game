@@ -153,6 +153,7 @@ public class Main extends Canvas implements Runnable {
         return keyInput;
     }
 
+    //TODO delete this comment. Thanks :)
     public void generateAsteroids(){
         timeSinceAsteroid += (System.currentTimeMillis() - lastTime);
         if(timeSinceAsteroid > 500){ //add a new asteroid every 500 milliseconds
