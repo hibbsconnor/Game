@@ -10,7 +10,8 @@ public class Player extends Entity {
 
     private int speed = 5;
     private ArrayList<Bullet> bullets = new ArrayList<>();
-    private ArrayList<Bullet> deadBullets = new ArrayList<>();
+    private long timeSinceLastFire = 0, lastTime = System.currentTimeMillis();
+    private boolean canFire = true;
 
     public Player(Main game, Point position, Point velocity){
         super(game, position, velocity);
@@ -26,24 +27,32 @@ public class Player extends Entity {
             velocity.y = -speed;
         }
         if(game.getKeyInput().down || game.getKeyInput().s){
-           velocity.y = speed;
+            velocity.y = speed;
         }
         if(game.getKeyInput().left || game.getKeyInput().a){
-           velocity.x = -speed;
+            velocity.x = -speed;
         }
         if(game.getKeyInput().right || game.getKeyInput().d){
-           velocity.x = speed;
+            velocity.x = speed;
         }
 
-        if(game.getKeyInput().space){
+        if(game.getKeyInput().space && canFire){
             bullets.add(new Bullet(position));
+            canFire = false;
+            timeSinceLastFire = 0;
         }
-
     }
 
     @Override
     public void tick(){
         anim.tick();
+
+        timeSinceLastFire += (System.currentTimeMillis() - lastTime);
+        if(timeSinceLastFire > 150){
+            canFire = true;
+        }
+        lastTime = System.currentTimeMillis();
+
         for(Bullet b : bullets){
             b.tick();
         }
