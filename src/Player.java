@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Player extends Entity {
@@ -9,6 +10,7 @@ public class Player extends Entity {
 
     private int speed = 5;
     private ArrayList<Bullet> bullets = new ArrayList<>();
+    private ArrayList<Bullet> deadBullets = new ArrayList<>();
 
     public Player(Main game, Point position, Point velocity){
         super(game, position, velocity);
@@ -42,12 +44,8 @@ public class Player extends Entity {
     @Override
     public void tick(){
         anim.tick();
-
         for(Bullet b : bullets){
             b.tick();
-            if(b.position.y < 50){
-                bullets.remove(b);
-            }
         }
 
         getInput();
