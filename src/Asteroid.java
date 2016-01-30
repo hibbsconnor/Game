@@ -1,12 +1,21 @@
+import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
 
 /**
- * Created by mahonbd on 1/30/2016.
+ * Created by mahonbd
  */
 public class Asteroid extends Entity{
 
-    public Asteroid(){
-        super(new BufferedImage(0,0,0),new Point(), new Point());
+    public Asteroid(Main game, Point position, Point velocity){
+        super(game, position, velocity);
+    }
+
+    public void tick(){
+
+    }
+
+    public void render(Graphics g){
+
     }
 }

@@ -1,5 +1,6 @@
 import java.awt.Canvas;
 import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.RenderingHints;
 import java.awt.image.BufferStrategy;
 
@@ -17,6 +18,7 @@ public class Main extends Canvas implements Runnable {
     private Thread thread;
 
     public KeyInput keyInput = new KeyInput();
+    public Player player;
 
     private synchronized void start() {
         addKeyListener(keyInput);
@@ -26,6 +28,8 @@ public class Main extends Canvas implements Runnable {
         running = true;
         thread = new Thread(this);
         thread.start();
+
+        player = new Player(this, new Point(400,400), new Point(0,0));
     }
 
     private synchronized void stop(){
@@ -74,6 +78,7 @@ public class Main extends Canvas implements Runnable {
 
     private void tick(){
         keyInput.tick();
+        player.tick();
     }
 
     private void render(){
@@ -90,6 +95,7 @@ public class Main extends Canvas implements Runnable {
          * DRAW STUFF UNDER HERE
          * Like "g2d.(BufferedImage object, int x, int y, this)"
          */
+        player.render(g2d);
 
         g2d.dispose();
         bs.show();
