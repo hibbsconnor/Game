@@ -19,18 +19,19 @@ public class Player extends Entity {
 //        xMove = 0;
 //        yMove = 0;
 //
-//        if(handler.getKeyManager().up || handler.getKeyManager().w){
-//            yMove = -speed;
-//        }
-//        if(handler.getKeyManager().down || handler.getKeyManager().s){
-//            yMove = speed;
-//        }
-//        if(handler.getKeyManager().left || handler.getKeyManager().a){
-//            xMove = -speed;
-//        }
-//        if(handler.getKeyManager().right || handler.getKeyManager().d){
-//            xMove = speed;
-//        }
+
+        if(game.getKeyInput().up || game.getKeyInput().w){
+            //yMove = -speed;
+        }
+        if(game.getKeyInput().down || game.getKeyInput().s){
+           // yMove = speed;
+        }
+        if(game.getKeyInput().left || game.getKeyInput().a){
+           // xMove = -speed;
+        }
+        if(game.getKeyInput().right || game.getKeyInput().d){
+           // xMove = speed;
+        }
 
     }
 
