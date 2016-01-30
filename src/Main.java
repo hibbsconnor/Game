@@ -156,9 +156,51 @@ public class Main extends Canvas implements Runnable {
     public void generateAsteroids(){
         timeSinceAsteroid += (System.currentTimeMillis() - lastTime);
         if(timeSinceAsteroid > 500){ //add a new asteroid every 500 milliseconds
-            asteroids.add(new Asteroid(this, new Point(rand.nextInt(WIDTH), rand.nextInt(HEIGHT/4)), new Point(0,rand.nextInt(10)+1)));
+            int xPos = rand.nextInt(WIDTH);
+            int yPos = rand.nextInt(HEIGHT);
+            Point location = new Point();
+            Point velocity = new Point();
+            int speed = rand.nextInt(5) + 5;
+
+            switch(rand.nextInt(4)){
+                case 0:
+                    location.x = xPos;
+                    location.y = -64;//-64
+                    break;
+                case 1:
+                    location.x = WIDTH + 64; // +64
+                    location.y = yPos;
+                    break;
+                case 2:
+                    location.x = xPos;
+                    location.y = HEIGHT + 64; //+64
+                    break;
+                case 3:
+                    location.x = -64; //-64
+                    location.y = yPos;
+                    break;
+            }
+            int w = location.x - player.position.x;
+            int h = location.y - player.position.y;
+            double theta = java.lang.Math.asin(w / h);
+
+
+            velocity.x = (int)(speed * Math.sin(theta));
+            velocity.y = (int)(speed * Math.cos(theta));
+            if(player.position.x < location.x){ //player is to the left
+                velocity.x = -velocity.x;
+            }
+            if(player.position.y < location.y){ //player is above
+                velocity.y = -velocity.y;
+            }
+
+            asteroids.add(new Asteroid(this, location, velocity));
             timeSinceAsteroid = 0;
         }
         lastTime = System.currentTimeMillis();
+    }
+
+    public double r2d(double radians){
+        return radians * 180 / Math.PI;
     }
 }

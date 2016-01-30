@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05fa9431-509d-46d8-b2c5-52b9ffd5e355" name="Default" comment="bullets destroy asteroids">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="05fa9431-509d-46d8-b2c5-52b9ffd5e355" name="Default" comment="Added timed asteroids falling">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Asteroid.java" afterPath="$PROJECT_DIR$/src/Asteroid.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Player.java" afterPath="$PROJECT_DIR$/src/Player.java" />
     </list>
     <ignored path="Game.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,26 +25,49 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.7358491">
+              <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
               <folding>
                 <element signature="e#3890#3891#0" expanded="true" />
                 <element signature="e#3921#3922#0" expanded="true" />
+                <element signature="e#5662#5663#0" expanded="true" />
+                <element signature="e#5708#5709#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Asteroid.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Assets.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Assets.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpriteSheet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SpriteSheet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Asteroid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Asteroid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76500857">
-              <caret line="27" column="84" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1196#1197#0" expanded="true" />
+                <element signature="e#1258#1259#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,10 +89,20 @@
         <entry file="file://$PROJECT_DIR$/src/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+              <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Collisions.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Collisions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -94,7 +124,7 @@
         <entry file="file://$PROJECT_DIR$/src/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,20 +156,13 @@
         <option value="$PROJECT_DIR$/src/Collisions.java" />
         <option value="$PROJECT_DIR$/src/Animation.java" />
         <option value="$PROJECT_DIR$/src/Entity.java" />
+        <option value="$PROJECT_DIR$/src/Asteroid.java" />
         <option value="$PROJECT_DIR$/src/Assets.java" />
         <option value="$PROJECT_DIR$/src/KeyInput.java" />
         <option value="$PROJECT_DIR$/src/Bullet.java" />
         <option value="$PROJECT_DIR$/src/Player.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/Asteroid.java" />
       </list>
-    </option>
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Bundled (Maven 3)" />
-      </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectFrameBounds">
@@ -173,6 +196,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -220,7 +245,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Sprites" />
+              <option name="myItemId" value="sprites" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -240,8 +265,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -249,7 +272,6 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="SearchEverywhereHistoryKey" value="Collisions&#9;FILE&#9;file://C:/SE1021/Game/src/Collisions.java" />
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
     <UpdatedFiles>
@@ -265,8 +287,11 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Asteroid.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Main.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Player.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -744,27 +769,38 @@
       <option name="project" value="LOCAL" />
       <updated>1454181722140</updated>
     </task>
-    <task id="LOCAL-00018" summary="merged bullet firing speed and object deletion">
-      <created>1454184265140</created>
+    <task id="LOCAL-00018" summary="Added bullet fire rate">
+      <created>1454183643421</created>
       <option name="number" value="00018" />
       <option name="project" value="LOCAL" />
-      <updated>1454184265140</updated>
+      <updated>1454183643421</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added timed asteroids falling">
+      <created>1454184371649</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1454184371649</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added timed asteroids falling">
+      <created>1454184464038</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1454184464038</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1050" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -777,6 +813,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -825,9 +862,9 @@
     <MESSAGE value="Added Bullet" />
     <MESSAGE value="Bullet movement" />
     <MESSAGE value="Added bullet.png" />
-    <MESSAGE value="merged bullet firing speed and object deletion" />
-    <MESSAGE value="bullets destroy asteroids" />
-    <option name="LAST_COMMIT_MESSAGE" value="bullets destroy asteroids" />
+    <MESSAGE value="Added bullet fire rate" />
+    <MESSAGE value="Added timed asteroids falling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added timed asteroids falling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -844,9 +881,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -868,6 +903,8 @@
           <folding>
             <element signature="e#3890#3891#0" expanded="true" />
             <element signature="e#3921#3922#0" expanded="true" />
+            <element signature="e#5662#5663#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -877,7 +914,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1196#1197#0" expanded="true" />
+            <element signature="e#1258#1259#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -929,9 +967,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -953,6 +989,8 @@
           <folding>
             <element signature="e#3890#3891#0" expanded="true" />
             <element signature="e#3921#3922#0" expanded="true" />
+            <element signature="e#5662#5663#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1004,9 +1042,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1028,11 +1064,13 @@
           <folding>
             <element signature="e#3890#3891#0" expanded="true" />
             <element signature="e#3921#3922#0" expanded="true" />
+            <element signature="e#5662#5663#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/Backgrounds/space_background.png">
+    <entry file="file://$PROJECT_DIR$/res/backgrounds/space_background.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -1059,7 +1097,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1196#1197#0" expanded="true" />
+            <element signature="e#1258#1259#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1083,9 +1122,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1104,6 +1141,8 @@
           <folding>
             <element signature="e#3890#3891#0" expanded="true" />
             <element signature="e#3921#3922#0" expanded="true" />
+            <element signature="e#5662#5663#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1144,9 +1183,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1165,6 +1202,8 @@
           <folding>
             <element signature="e#3890#3891#0" expanded="true" />
             <element signature="e#3921#3922#0" expanded="true" />
+            <element signature="e#5662#5663#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1205,9 +1244,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1218,6 +1255,8 @@
           <folding>
             <element signature="e#3890#3891#0" expanded="true" />
             <element signature="e#3921#3922#0" expanded="true" />
+            <element signature="e#5662#5663#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1229,7 +1268,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/Backgrounds/space_background.png">
+    <entry file="file://$PROJECT_DIR$/res/backgrounds/space_background.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -1246,6 +1285,14 @@
             <element signature="method#mouseReleased#0;class#MouseInput#0" expanded="false" />
             <element signature="method#mouseClicked#0;class#MouseInput#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Collisions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1268,6 +1315,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/KeyInput.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1278,74 +1333,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SpriteSheet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7169811">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6603774">
-          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Bullet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Collisions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2264151">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/Sprites/bullet.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
+          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SpriteSheet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/sprites/asteroid.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Asteroid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding>
+            <element signature="e#1196#1197#0" expanded="true" />
+            <element signature="e#1258#1259#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.7358491">
+          <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
           <folding>
             <element signature="e#3890#3891#0" expanded="true" />
             <element signature="e#3921#3922#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Asteroid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76500857">
-          <caret line="27" column="84" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#5662#5663#0" expanded="true" />
+            <element signature="e#5708#5709#0" expanded="true" />
           </folding>
         </state>
       </provider>
