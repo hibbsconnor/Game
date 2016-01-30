@@ -7,6 +7,8 @@ public class Bullet {
     private Point velocity = new Point(0, -5);
     public Point position = new Point();
 
+    //public static int ID = Main.rand.nextInt(10000);
+
     public Bullet(Point position){
         this.position.x = position.x;
         this.position.y = position.y;
@@ -20,4 +22,5 @@ public class Bullet {
     public void tick(){
         position.y += velocity.y;
     }
+
 }

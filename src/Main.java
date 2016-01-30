@@ -19,7 +19,7 @@ public class Main extends Canvas implements Runnable {
     private boolean running = false;
     private Thread thread;
 
-    public Random rand = new Random();
+    public static Random rand = new Random();
 
     public KeyInput keyInput = new KeyInput();
 
@@ -36,7 +36,7 @@ public class Main extends Canvas implements Runnable {
         Assets.init();
         player = new Player(this, new Point(400,400), new Point(0,0));
 
-        for(int i=0;i<20; i++){
+        for(int i=0;i<100; i++){
             asteroids.add(new Asteroid(this, new Point(rand.nextInt(WIDTH), rand.nextInt(HEIGHT/4)), new Point(0,rand.nextInt(10)+1)));
         }
 

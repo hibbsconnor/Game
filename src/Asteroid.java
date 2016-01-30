@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
 public class Asteroid extends Entity{
 
     private BufferedImage image = Assets.asteroid;
+
+    //public static int ID = Main.rand.nextInt(10000);
     public Asteroid(Main game, Point position, Point velocity){
         super(game, position, velocity);
 
@@ -25,4 +27,5 @@ public class Asteroid extends Entity{
     public void render(Graphics g){
         g.drawImage(image,position.x, position.y,null);
     }
+
 }

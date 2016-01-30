@@ -44,8 +44,13 @@ public class Player extends Entity {
     @Override
     public void tick(){
         anim.tick();
+        ArrayList<Bullet> deadBullets= new ArrayList<>();
         for(Bullet b : bullets){
             b.tick();
+            if(b.position.y < 50) deadBullets.add(b);
+        }
+        for(Bullet dead : deadBullets){
+            bullets.remove(dead);
         }
 
         getInput();
