@@ -148,6 +148,7 @@ public class Main extends Canvas implements Runnable {
         timeSinceAsteroid += (System.currentTimeMillis() - lastTime);
         if(timeSinceAsteroid > 500){ //add a new asteroid every 500 milliseconds
             asteroids.add(new Asteroid(this, new Point(rand.nextInt(WIDTH), rand.nextInt(HEIGHT/4)), new Point(0,rand.nextInt(10)+1)));
+            timeSinceAsteroid = 0;
         }
         lastTime = System.currentTimeMillis();
     }
