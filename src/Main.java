@@ -165,23 +165,23 @@ public class Main extends Canvas implements Runnable {
             int yPos = rand.nextInt(HEIGHT);
             Point location = new Point();
             float xVelocity, yVelocity;
-            float speed = (rand.nextFloat() * 5) + 5;
+            float speed = (rand.nextFloat() * 5) + 3;
 
             switch(rand.nextInt(4)){ //randomly generate a side to spawn on. 0-4: top, right, left, bottom
                 case 0:
                     location.x = xPos;
-                    location.y = 64;//-64
+                    location.y = -64;//-64
                     break;
                 case 1:
-                    location.x = WIDTH - 64; // +64
+                    location.x = WIDTH + 64; // +64
                     location.y = yPos;
                     break;
                 case 2:
                     location.x = xPos;
-                    location.y = HEIGHT - 64; //+64
+                    location.y = HEIGHT + 64; //+64
                     break;
                 case 3:
-                    location.x = +64; //-64
+                    location.x = -64; //-64
                     location.y = yPos;
                     break;
             }

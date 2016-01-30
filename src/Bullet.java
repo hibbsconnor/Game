@@ -4,14 +4,16 @@ import java.awt.image.BufferedImage;
 public class Bullet {
 
     private BufferedImage image;
-    private Point velocity = new Point(0, -15);
+    private Point velocity = new Point();
     public Point position = new Point();
 
     //public static int ID = Main.rand.nextInt(10000);
 
-    public Bullet(Point position){
+    public Bullet(Point position, Point velocity){
         this.position.x = position.x;
         this.position.y = position.y;
+        this.velocity.x = velocity.x;
+        this.velocity.y = velocity.y;
         image = Assets.bullet;
     }
 

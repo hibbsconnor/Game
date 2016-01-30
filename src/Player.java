@@ -39,7 +39,7 @@ public class Player extends Entity {
         }
 
         if(game.getKeyInput().space && canFire){
-            bullets.add(new Bullet(new Point((position.x+14),position.y)));
+            bullets.add(new Bullet(new Point((position.x+14),position.y), new Point(0, -15)));
             canFire = false;
             timeSinceLastFire = 0;
         }
@@ -51,7 +51,7 @@ public class Player extends Entity {
         anim.tick();
 
         timeSinceLastFire += (System.currentTimeMillis() - lastTime);
-        if(timeSinceLastFire > 200){
+        if(timeSinceLastFire > 150){
             canFire = true;
         }
         lastTime = System.currentTimeMillis();
