@@ -23,6 +23,7 @@ public class Bullet {
 
     public void tick(){
         position.y += velocity.y;
+        position.x += velocity.x;
     }
 
 }

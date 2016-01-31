@@ -40,6 +40,9 @@ public class Player extends Entity {
 
         if(game.getKeyInput().space && canFire){
             bullets.add(new Bullet(new Point((position.x+14),position.y), new Point(0, -15)));
+            bullets.add(new Bullet(new Point((position.x+14),position.y), new Point(0, 15)));
+            bullets.add(new Bullet(new Point((position.x+14),position.y), new Point(15, 0)));
+            bullets.add(new Bullet(new Point((position.x+14),position.y), new Point(-15, 0)));
             canFire = false;
             timeSinceLastFire = 0;
         }
