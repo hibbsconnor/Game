@@ -15,27 +15,28 @@ public class Player extends Entity {
     private long timeSinceLastFire = 0, lastTime = System.currentTimeMillis();
     private boolean canFire = true;
 
+    private Main game;
+
     public Player(Main game, Point position, Point velocity){
-        super(game, position.x, position.y, velocity.x, velocity.y);
+        super(position, velocity);
+        this.game = game;
         anim = new Animation(100, Assets.player);
     }
 
     private void getInput(){
-        yVelocity = 0;
-        xVelocity = 0;
-
+        velocity = new Point(0, 0);
 
         if(game.getKeyInput().up || game.getKeyInput().w){
-            yVelocity = -speed;
+            velocity.y = -speed;
         }
         if(game.getKeyInput().down || game.getKeyInput().s){
-           yVelocity = speed;
+           velocity.y = speed;
         }
         if(game.getKeyInput().left || game.getKeyInput().a){
-           xVelocity = -speed;
+           velocity.x = -speed;
         }
         if(game.getKeyInput().right || game.getKeyInput().d){
-           xVelocity = speed;
+           velocity.x = speed;
         }
 
         if(game.getKeyInput().space && canFire){
@@ -74,7 +75,7 @@ public class Player extends Entity {
 
     @Override
     public void render(Graphics g){
-
+        //TODO Take this rendering out of Player and into main rendering loop
         for(Bullet b : bullets){
             b.render(g);
         }
@@ -82,17 +83,16 @@ public class Player extends Entity {
     }
 
     public void move(){
-        if(position.x+xVelocity >0 && position.x+xVelocity < 990){
-            position.x += xVelocity;
+        if(position.x+velocity.x >0 && position.x+velocity.x < 990){
+            position.x += velocity.x;
         }
-        if(position.y+yVelocity>0 && position.y+yVelocity<990){
-            position.y += yVelocity;
+        if(position.y+velocity.y>0 && position.y+velocity.y<990){
+            position.y += velocity.y;
         }
     }
 
-    private BufferedImage getCurrentAnimationFrame(){
-        BufferedImage currentFrame;
-        currentFrame = anim.getCurrentFrame();
-        return currentFrame;
+    //TODO Make getting animation frames more global rather than in Entity classes
+    private BufferedImage getCurrentAnimationFrame() {
+        return anim.getCurrentFrame();
     }
 }

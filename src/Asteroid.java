@@ -2,25 +2,20 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
-import jdk.nashorn.internal.scripts.JO;
 
 import javax.swing.JOptionPane;
 
-/**
- * Created by mahonbd
- */
 public class Asteroid extends Entity{
 
     private BufferedImage image = Assets.asteroid;
 
-    public Asteroid(Main game, Point position, float xVelocity, float yVelocity){
-        super(game, position.x, position.y, xVelocity, yVelocity);
+    public Asteroid(Point position, Point velocity){
+        super(position, velocity);
     }
 
     public void tick(){
-        position.x += xVelocity;
-        position.y += yVelocity;
+        position.x += velocity.x;
+        position.y += velocity.y;
         //System.out.println("X: " + xVelocity + " - Y: " + yVelocity);
         //OKAY
         if(Collisions.rectCollision(new Rectangle(Main.player.position.x, Main.player.position.y, 32, 32),

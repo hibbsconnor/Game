@@ -2,7 +2,6 @@ import java.awt.Canvas;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
-import java.awt.RenderingHints;
 import java.awt.image.BufferStrategy;
 import java.util.ArrayList;
 import java.util.Random;
@@ -15,7 +14,7 @@ public class Main extends Canvas implements Runnable {
     public static final int WIDTH = (int) 990;
     public static final int HEIGHT = (int) 990;
 
-    private long timeSinceAsteroid = 0, lastTime = System.currentTimeMillis();
+    private long timeSinceObstacle = 0, lastTime = System.currentTimeMillis();
 
     //Display Score
     public static int score = 0;
@@ -30,9 +29,9 @@ public class Main extends Canvas implements Runnable {
 
     public static Player player;
 
-    public static ArrayList<Asteroid> asteroids = new ArrayList<>();
+    public static ArrayList<Entity> asteroids = new ArrayList<>();
 
-    public static ArrayList<Asteroid> deadAsteroids = new ArrayList<>();
+    public static ArrayList<Entity> deadAsteroids = new ArrayList<>();
 
     private synchronized void start() {
         addKeyListener(keyInput);
@@ -97,16 +96,16 @@ public class Main extends Canvas implements Runnable {
     private void tick(){
         keyInput.tick();
         player.tick();
-        generateAsteroids();
+        generateObstacles();
         deadAsteroids = new ArrayList<>();
-        for(Asteroid a : asteroids){
+        for(Entity a : asteroids){
             a.tick();
             if(!Collisions.rectCollision(new Rectangle(-200,-200,1390,1390),
                                         new Rectangle(a.position.x, a.position.y, 64, 64))){
                 deadAsteroids.add(a);
             }
         }
-        for(Asteroid a : deadAsteroids){
+        for(Entity a : deadAsteroids){
             asteroids.remove(a);
         }
         frame.setTitle("Score: " + score);
@@ -127,7 +126,7 @@ public class Main extends Canvas implements Runnable {
          * Like "g2d.(BufferedImage object, int x, int y, this)"
          */
         g2d.drawImage(Assets.background,0,0,null);
-        for(Asteroid a: asteroids){
+        for(Entity a: asteroids){
             a.render(g2d);
         }
         player.render(g2d);
@@ -158,9 +157,9 @@ public class Main extends Canvas implements Runnable {
         return keyInput;
     }
 
-    public void generateAsteroids(){
-        timeSinceAsteroid += (System.currentTimeMillis() - lastTime);
-        if(timeSinceAsteroid > 500){ //add a new asteroid every 500 milliseconds
+    public void generateObstacles(){
+        timeSinceObstacle += (System.currentTimeMillis() - lastTime);
+        if(timeSinceObstacle > 500){ //add a new asteroid every 500 milliseconds
             int xPos = rand.nextInt(WIDTH);
             int yPos = rand.nextInt(HEIGHT);
             Point location = new Point();
@@ -192,8 +191,13 @@ public class Main extends Canvas implements Runnable {
             xVelocity = -(float)(speed * Math.sin(theta));
             yVelocity = -(float)(speed * Math.cos(theta));
 
-            asteroids.add(new Asteroid(this, location, xVelocity, yVelocity));
-            timeSinceAsteroid = 0;
+            int laserX = -128;
+            int laserY = rand.nextInt(HEIGHT);
+            Point laserPosition = new Point(-128, rand.nextInt(HEIGHT));
+
+            asteroids.add(new Laser(laserPosition, new Point(10, 0)));
+            asteroids.add(new Asteroid(location, new Point((int)xVelocity, (int)yVelocity)));
+            timeSinceObstacle = 0;
         }
         lastTime = System.currentTimeMillis();
     }
