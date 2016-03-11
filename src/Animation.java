@@ -2,7 +2,7 @@ import java.awt.image.BufferedImage;
 
 public class Animation {
 
-    private static int speed, index;
+    private int speed, index;
     private long lastTime, timer;
     private BufferedImage[] frames;
 
