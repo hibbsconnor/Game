@@ -32,13 +32,14 @@ public class Main extends Canvas implements Runnable {
     public static ArrayList<Entity> asteroids = new ArrayList<>();
 
     public static ArrayList<Entity> deadAsteroids = new ArrayList<>();
-
+    
+    //start the game, listen for mouse and key inputs
     private synchronized void start() {
         addKeyListener(keyInput);
         addMouseListener(new MouseInput());
         this.requestFocus();
 
-
+        //initialize images and create the player
         Assets.init();
         player = new Player(this, new Point((WIDTH/2)-16,(HEIGHT/2)-16), new Point(0,0));
 
@@ -60,16 +61,18 @@ public class Main extends Canvas implements Runnable {
         }
         System.exit(1);
     }
-
+    //while thread runs
     public void run(){
-        long lastTime = System.nanoTime();
+        //update the time and frames, refresh everything
+    	long lastTime = System.nanoTime();
         final double amountOfTicks = 60.0;
         double ns = 1000000000 / amountOfTicks;
         double delta = 0;
         int updates = 0;
         int frames = 0;
         long timer = System.currentTimeMillis();
-
+        
+        //update the clock
         while(running){
             long now = System.nanoTime();
             delta += (now - lastTime)/ ns;
@@ -92,7 +95,7 @@ public class Main extends Canvas implements Runnable {
         }
         stop();
     }
-
+    //what to do during updates, updates player, keys, asteroid, bullets per tick
     private void tick(){
         keyInput.tick();
         player.tick();
@@ -110,7 +113,7 @@ public class Main extends Canvas implements Runnable {
         }
         frame.setTitle("Score: " + score);
     }
-
+    //draw bugger and background
     private void render(){
         BufferStrategy bs = this.getBufferStrategy();
 
@@ -134,7 +137,8 @@ public class Main extends Canvas implements Runnable {
         g2d.dispose();
         bs.show();
     }
-
+    
+    //main to run the game, create the window and frame
     public static void main(String args[]){
         Main game = new Main();
         game.setSize(WIDTH, HEIGHT);
@@ -156,7 +160,7 @@ public class Main extends Canvas implements Runnable {
     public KeyInput getKeyInput() {
         return keyInput;
     }
-
+    //create random asteroids to populate the game and keep creating them
     public void generateObstacles(){
         timeSinceObstacle += (System.currentTimeMillis() - lastTime);
         if(timeSinceObstacle > 500){ //add a new asteroid every 500 milliseconds

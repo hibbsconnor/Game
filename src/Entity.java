@@ -1,5 +1,6 @@
 import java.awt.*;
 
+//entity superclass for all game objects
 public abstract class Entity {
 
     protected boolean isSolid = true; //entity solid by default
