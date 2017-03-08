@@ -19,6 +19,7 @@ public class Assets {
         //Initialize BufferedImage Arrays for Spritesheets
         player = new BufferedImage[4];
         laser = new BufferedImage[4];
+        //crop the spritesheets
         for(int i = 0; i < 4; i++){
             player[i] = playerSpriteSheet.crop(i, 0, DIM);
         }

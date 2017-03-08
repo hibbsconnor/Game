@@ -13,11 +13,13 @@ public class Bullet extends Entity{
         super(position, velocity);
         image = Assets.bullet;
     }
-
+    
+    //render the object at its position
     public void render(Graphics g){
         g.drawImage(image, position.x, position.y, null);
     }
-
+    
+    //update the object position
     public void tick(){
         position.y += velocity.y;
         position.x += velocity.x;

@@ -2,7 +2,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 public class KeyInput extends KeyAdapter{
-
+	
+	//booleans for all the keys being used for the game
     private boolean[] keys;
     public boolean up, down, left, right;
     public boolean w, a, s, d;
@@ -11,7 +12,8 @@ public class KeyInput extends KeyAdapter{
     public KeyInput(){
         keys = new boolean[256];
     }
-
+    
+    //update key events, check if certain keys are being pressed
     public void tick(){
         up = keys[KeyEvent.VK_UP];
         down = keys[KeyEvent.VK_DOWN];

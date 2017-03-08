@@ -16,13 +16,14 @@ public class Player extends Entity {
     private boolean canFire = true;
 
     private Main game;
-
+    //constructor
     public Player(Main game, Point position, Point velocity){
         super(position, velocity);
         this.game = game;
         anim = new Animation(100, Assets.player);
     }
-
+    
+    //get the current user key inputs and update the player's velocity + fire bullets
     private void getInput(){
         velocity = new Point(0, 0);
 
@@ -38,7 +39,8 @@ public class Player extends Entity {
         if(game.getKeyInput().right || game.getKeyInput().d){
            velocity.x = speed;
         }
-
+        
+        //if the space is hit, create and fire bullets
         if(game.getKeyInput().space && canFire){
             bullets.add(new Bullet(new Point((position.x+14),position.y), new Point(0, -15)));
             bullets.add(new Bullet(new Point((position.x+14),position.y), new Point(0, 15)));
@@ -49,17 +51,20 @@ public class Player extends Entity {
         }
 
     }
-
+    
+    //update the object
     @Override
     public void tick(){
         anim.tick();
         //Cool
+        //Don't allow the player to fire immediatly, fire after a certain amount of time
         timeSinceLastFire += (System.currentTimeMillis() - lastTime);
         if(timeSinceLastFire > 150){
             canFire = true;
         }
         lastTime = System.currentTimeMillis();
-
+        
+        //list of bullets that should be removed
         ArrayList<Bullet> deadBullets= new ArrayList<>();
         for(Bullet b : bullets){
             b.tick();
@@ -72,7 +77,8 @@ public class Player extends Entity {
         getInput();
         move();
     }
-
+    
+    //draw the player object
     @Override
     public void render(Graphics g){
         //TODO Take this rendering out of Player and into main rendering loop
@@ -81,7 +87,8 @@ public class Player extends Entity {
         }
         g.drawImage(getCurrentAnimationFrame(), position.x, position.y, 32, 32, null);
     }
-
+    
+    //move and update the position of the player object
     public void move(){
         if(position.x+velocity.x >0 && position.x+velocity.x < 990){
             position.x += velocity.x;

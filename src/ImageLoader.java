@@ -3,7 +3,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 public class ImageLoader {
-
+	//load the image from a path string
     public static BufferedImage loadImage(String path){
         BufferedImage image = null;
         try {

@@ -21,7 +21,7 @@ public class Tile {
     protected BufferedImage texture;
     protected final int id;
     public static final int TILE_WIDTH = 32, TILE_HEIGHT = 32;
-
+    
     public Tile(BufferedImage texture, int id){
         this.texture = texture;
         this.id = id;
@@ -32,11 +32,11 @@ public class Tile {
     public void tick(){
 
     }
-
+    //draw the tile with set width and height at point x,y
     public void render(Graphics g, int x, int y){
         g.drawImage(texture, x, y, TILE_WIDTH, TILE_HEIGHT, null);
     }
-
+    //is the tile solid?
     public boolean isSolid(){
         return false;
     }
